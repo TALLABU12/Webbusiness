@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Récupérer les données du formulaire
     $name = $_POST['name'];
     $email = $_POST['email'];
