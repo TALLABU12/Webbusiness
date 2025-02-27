@@ -1,4 +1,4 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Empêche le rechargement de la page
 
   // Récupérer les valeurs des champs du formulaire
@@ -29,7 +29,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     });
 
   // Réinitialiser le formulaire (facultatif)
-  document.getElementById('contactForm').reset();
+  document.getElementById('contact-form').reset();
 });
 //Toggling Menu
 const showMenu = (toggleId, navId) => {
