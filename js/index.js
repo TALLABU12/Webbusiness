@@ -19,7 +19,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     message: message
   };
 
-  emailjs.send('service_r82oqrn', 'template_3dv1nni', templateParams)
+  emailjs.send('service_jkpta1e', 'template_5ej0ior', templateParams)
     .then(function(response) {
       console.log('Succès!', response.status, response.text);
       document.getElementById('formResponse').innerText = 'Formulaire envoyé avec succès !';
