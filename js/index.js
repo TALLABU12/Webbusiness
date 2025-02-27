@@ -1,3 +1,36 @@
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Empêche le rechargement de la page
+
+  // Récupérer les valeurs des champs du formulaire
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Effectuer une validation basique des champs (facultatif)
+  if (!name || !email || !message) {
+    alert('Tous les champs sont obligatoires.');
+    return;
+  }
+
+  // Envoyer le formulaire avec EmailJS
+  const templateParams = {
+    name: name,
+    email: email,
+    message: message
+  };
+
+  emailjs.send('service_r82oqrn', 'template_3dv1nni', templateParams)
+    .then(function(response) {
+      console.log('Succès!', response.status, response.text);
+      document.getElementById('formResponse').innerText = 'Formulaire envoyé avec succès !';
+    }, function(error) {
+      console.error('Erreur:', error);
+      document.getElementById('formResponse').innerText = 'Une erreur est survenue.';
+    });
+
+  // Réinitialiser le formulaire (facultatif)
+  document.getElementById('contactForm').reset();
+});
 //Toggling Menu
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId);
